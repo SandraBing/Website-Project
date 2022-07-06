@@ -1,0 +1,16 @@
+<?php
+require 'connect.php';
+$id= $_GET["id"];
+$sql= "DELETE FROM comment WHERE id=$id";
+
+if (mysqli_query( $link, $sql))
+{
+ header("Location: http://localhost/property/managereviews.php");
+ exit;
+}
+else
+{
+echo ("The record could not be updated");
+}
+mysqli_close($link);
+?>
